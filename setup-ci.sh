@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#TODO: Add tests for deploying jenkins using this script into a new tenancy
+
 NAME='openstack-jenkins-slave'
 SOURCE_REPOSITORY_URL='https://github.com/UKCloud/jenkins-openstack-slave-pipeline.git'
 SOURCE_REPOSITORY_REF='master'
@@ -13,11 +15,15 @@ function setup_projects() {
         oc new-project $project
     done
     oc policy add-role-to-user edit system:serviceaccount:build-openshift:jenkins -n build-openshift-pre-prod
+    oc project build-openshift
+}
+
+function deploy_jenkins_master() {
+    oc new-app jenkins-persistent -p VOLUME_CAPACITY=50Gi 
 }
 
 function setup_openstack_jenkins_slave_pipeline() {
 
-    oc project build-openshift
     oc new-app -f openshift-yaml/template-openstackclient-jenkins-slave.yaml \
         -p NAME=$NAME \
         -p SOURCE_REPOSITORY_URL=$SOURCE_REPOSITORY_URL \
