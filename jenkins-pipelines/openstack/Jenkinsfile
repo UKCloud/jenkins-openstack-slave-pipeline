@@ -11,6 +11,7 @@ node ('openstack-jenkins-slave') {
     stage('test') {
         sh("openstack -h")
         sh("openstack stack -h")
+        sh("ansible --version")
     }
 
 }
