@@ -2,7 +2,8 @@ FROM registry.access.redhat.com/openshift3/jenkins-slave-base-rhel7:latest
 
 USER root
 
-RUN yum install -y python-devel gcc yum-utils vim --skip-broken --setopt=protected_multilib=false && \
+RUN yum erase -y libgomp-4.8.5-28.el7.i686 && \
+    yum install -y python-devel gcc yum-utils vim --setopt=protected_multilib=false && \
     yum-config-manager --enable rhel-7-server-extras-rpms && \
     yum install -y ansible && \
     curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" && \
