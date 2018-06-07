@@ -13,3 +13,5 @@ RUN yum erase -y libgomp && \
     pip -v install python-heatclient
 
 USER 1001
+
+## pip version is currently hardcoded to 9.0.3 because install of python-openstackclient fails with pip 10
