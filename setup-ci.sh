@@ -4,7 +4,7 @@
 
 NAME='openstack-jenkins-slave'
 SOURCE_REPOSITORY_URL='https://github.com/UKCloud/jenkins-openstack-slave-pipeline.git'
-SOURCE_REPOSITORY_REF='hot-fix/change_yumutils'
+SOURCE_REPOSITORY_REF='master'
 CONTEXT_DIR='docker/openstack-jenkins-slave/'
 PIPELINE_CONTEXT_DIR='jenkins-pipelines/openstack/'
 
