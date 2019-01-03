@@ -8,10 +8,6 @@ RUN yum erase -y libgomp && \
     yum install -y ansible && \
     curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" && \
     python get-pip.py && \
-    pip install pip==9.0.3 && \
-    pip -v install python-openstackclient && \
-    pip -v install python-heatclient
+    pip install pip python-openstackclient python-heatclient
 
 USER 1001
-
-## pip version is currently hardcoded to 9.0.3 because install of python-openstackclient fails with pip 10
