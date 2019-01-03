@@ -8,6 +8,6 @@ RUN yum erase -y libgomp && \
     yum install -y ansible && \
     curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" && \
     python get-pip.py && \
-    pip install pip python-openstackclient python-heatclient
+    pip install python-openstackclient python-heatclient
 
 USER 1001
