@@ -6,8 +6,7 @@ RUN yum clean all && \
     yum erase -y libgomp && \
     yum install -y gcc yum-config-manager && \
     yum-config-manager --enable rhel-7-server-extras-rpms rhel-server-rhscl-7-rpms && \
-    #subscription-manager repos --enable rhel-server-rhscl-7-rpms && \
-    yum install -y ansible python27-python-pip && \
+    yum install -y ansible python-pip && \
     pip install python-openstackclient && \ 
     pip install python-heatclient
 
