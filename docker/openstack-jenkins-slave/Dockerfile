@@ -6,7 +6,7 @@ USER root
 RUN yum clean all && yum install -y gcc
 RUN yum-config-manager --enable rhel-7-server-extras-rpms > /dev/null && yum-config-manager --enable rhel-server-rhscl-7-rpms > /dev/null
 RUN yum update -y
-RUN yum install -y ansible python-devel
+RUN yum install -y ansible 
 
 RUN mkdir /pip
 RUN cd /pip && curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" && python get-pip.py
