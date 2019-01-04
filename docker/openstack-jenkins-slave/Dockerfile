@@ -8,11 +8,12 @@ RUN yum-config-manager --enable rhel-7-server-rpms/7Server/x86_64 > dev/null \
 
 RUN yum clean all && yum update -y
 #RUN yum erase -y libgomp && \
-RUN yum install gcc python python-devel ansible -y
 
 RUN mkdir /pip
 RUN cd /pip && curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" && python get-pip.py
 RUN pip install --no-cache-dir python-openstackclient 
 #&& pip install --no-cache-directory python-heatclient
+
+RUN yum install gcc python python-devel ansible -y
 
 USER 1001
