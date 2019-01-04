@@ -2,14 +2,13 @@ FROM registry.access.redhat.com/openshift3/jenkins-slave-base-rhel7:3.9.57
 
 USER root
 
-RUN yum install yum-utils -y
+RUN yum upgrade yum-utils -y
 
 RUN yum-config-manager --enable rhel-7-server-rpms > /dev/null \
     --enable rhel-7-server-optional-rpms > /dev/null \
     --enable rhel-7-server-extras-rpms > /dev/null \
     --enable rhel-server-rhscl-7-rpms > dev/null
 
-RUN yum check-update
 #RUN yum erase -y libgomp && \
 
 run yum insall python python-devel
