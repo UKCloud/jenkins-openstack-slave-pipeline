@@ -11,12 +11,11 @@ RUN yum-config-manager --enable rhel-7-server-rpms > /dev/null \
 
 #RUN yum erase -y libgomp && \
 
-RUN yum install python python-devel -y
-RUN python -m ensurepip --default-pip
-RUN python -m pip install --upgrade pip setuptools wheel
+RUN yum install python-devel -y
+#RUN python -m ensurepip --default-pip
+#RUN python -m pip install --upgrade pip setuptools wheel
 
-#RUN mkdir /pip
-#RUN cd /pip && curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" && python get-pip.py --prefix=/usr/local
+RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" && python get-pip.py --prefix=/usr/local
 RUN pip install --no-cache-dir python-openstackclient 
 #&& pip install --no-cache-directory python-heatclient
 
