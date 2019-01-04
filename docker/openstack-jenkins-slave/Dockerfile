@@ -15,6 +15,7 @@ RUN yum install python-devel -y
 
 RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
 RUN python get-pip.py --prefix=/usr/local
+RUN which pip
 RUN pip install --no-cache-dir python-openstackclient
 #&& pip install --no-cache-directory python-heatclient
 
