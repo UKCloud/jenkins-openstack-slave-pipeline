@@ -11,7 +11,7 @@ RUN yum-config-manager --enable rhel-7-server-rpms > /dev/null \
 
 #RUN yum erase -y libgomp && \
 
-RUN yum install python python-devel
+RUN yum install python python-devel -y
 RUN python -m ensurepip --default-pip
 RUN python -m pip install --upgrade pip setuptools wheel
 
