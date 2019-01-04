@@ -7,7 +7,7 @@ RUN yum-config-manager --enable rhel-7-server-rpms > dev/null \
     --enable rhel-7-server-extras-rpms \
     --enable rhel-server-rhscl-7-rpms
 
-RUN yum clean all && yum update -y
+RUN yum update -y
 #RUN yum erase -y libgomp && \
 
 RUN yum install python-pip python-wheel -y 
