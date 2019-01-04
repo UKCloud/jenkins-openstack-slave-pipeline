@@ -2,7 +2,7 @@ FROM registry.access.redhat.com/openshift3/jenkins-slave-base-rhel7:3.9.57
 
 USER root
 
-RUN yum-config-manager --enable rhel-7-server-rpms > dev/null \
+RUN yum-config-manager --enable rhel-7-server-rpms \
     --enable rhel-7-server-optional-rpms \
     --enable rhel-7-server-extras-rpms \
     --enable rhel-server-rhscl-7-rpms
