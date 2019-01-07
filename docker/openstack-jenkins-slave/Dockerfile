@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/openshift3/jenkins-slave-base-rhel7:3.9.57
+FROM registry.access.redhat.com/openshift3/jenkins-slave-base-rhel7:latest
 
 USER root
 
