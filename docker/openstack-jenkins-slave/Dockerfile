@@ -7,7 +7,8 @@ RUN yum-config-manager --enable rhel-7-server-rpms > /dev/null --enable rhel-7-s
 RUN yum install python-devel gcc ansible -y
 
 RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" && python get-pip.py && pip install pip==10.0.1
-RUN pip install --no-cache-dir python-openstackclient python-heatclient
+RUN pip install --no-cache-dir python-openstackclient 
+RUN pip install -no-cache-dir python-heatclient
 
 USER 1001
 
