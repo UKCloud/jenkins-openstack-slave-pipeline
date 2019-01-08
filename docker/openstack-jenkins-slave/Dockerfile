@@ -11,4 +11,4 @@ RUN pip install python-heatclient
 
 USER 1001
 
-## Pip version is hardcoded to 10.0.1 as with versions 18 openstack clients install fails
+## Pip version is hardcoded to 9.0.3 as with pip versions 10 and 18 openstack clients install fails
