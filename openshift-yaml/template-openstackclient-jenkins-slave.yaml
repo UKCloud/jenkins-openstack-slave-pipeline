@@ -96,7 +96,7 @@ parameters:
   displayName: Git Repository URL
   name: SOURCE_REPOSITORY_URL
   required: true
-  value: https://github.com/charliejllewellyn/openshift-jenkins-pipeline.git
+  value: https://github.com/UKCloud/openshift-deployment-jenkins-pipeline.git
 - description: Set this to a branch name, tag or other ref of your repository if you
     are not using the default branch.
   displayName: Git Reference
