@@ -10,9 +10,10 @@ RUN wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm 
 RUN rm -fr /var/cache/yum/*
 RUN yum clean all
 
-RUN yum install python36 python36-setuptools -y && easy_install-3.6 pip && pip install --upgrade pip
+RUN yum install python36 python36-setuptools -y
 
-RUN cd /root && pip install python-openstackclient python-heatclient
+RUN cd /root && easy_install-3.6 pip && pip install --upgrade pip
+RUN pip install python-openstackclient python-heatclient
 
 RUN cd /home/jenkins
 
