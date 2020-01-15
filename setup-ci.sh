@@ -19,7 +19,7 @@ function setup_projects() {
 }
 
 function deploy_jenkins_master() {
-    oc new-app jenkins-persistent -p VOLUME_CAPACITY=50Gi 
+    oc new-app jenkins-persistent -p VOLUME_CAPACITY=50Gi -e INSTALL_PLUGINS=slack:2.35,global-slack-notifier:1.5
 }
 
 function setup_openstack_jenkins_slave_pipeline() {
@@ -40,4 +40,3 @@ function configure_openshift_githooks() {
 
 setup_projects
 setup_openstack_jenkins_slave_pipeline
-configure_openshift_githooks
