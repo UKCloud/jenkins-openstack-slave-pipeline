@@ -7,7 +7,7 @@ RUN yum-config-manager --enable rhel-7-server-rpms > /dev/null --enable rhel-7-s
 RUN yum install python-devel gcc wget -y
 RUN wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && chmod 700 epel-release-latest-7.noarch.rpm && rpm -i epel-release-latest-7.noarch.rpm
 RUN yum install python36 python36-setuptools -y && easy_install-3.6 pip && pip install --upgrade pip
-RUN pip install python-openstackclient python-heatclient
+RUN pip install python-openstackclient python-heatclient pyyaml
 RUN pip install ansible==2.6
 
 USER 1001
