@@ -3,6 +3,7 @@ FROM registry.access.redhat.com/openshift3/jenkins-slave-base-rhel7:latest
 USER root
 
 RUN yum-config-manager --enable rhel-7-server-rpms > /dev/null --enable rhel-7-server-extras-rpms > /dev/null --enable rhel-7-server-ansible-2.9-rpms > /dev/null
+RUN yum repolist all
 RUN yum list ansible --show-duplicates
 RUN yum install python-devel ansible gcc wget -y
 RUN yum update ansible
