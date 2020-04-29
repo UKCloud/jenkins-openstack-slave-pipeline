@@ -2,8 +2,7 @@ FROM registry.access.redhat.com/openshift3/jenkins-slave-base-rhel7:latest
 
 USER root
 
-RUN yum-config-manager --enable rhel-7-server-rpms > /dev/null --enable rhel-7-server-extras-rpms > /dev/null
-
+RUN yum-config-manager --enable rhel-7-server-rpms > /dev/null --enable rhel-7-server-extras-rpms > /dev/null --enable rhel-7-server-ansible-2.6-rpms > /dev/null
 RUN yum install python-devel ansible-2.6.20-1.el7ae.noarch gcc wget -y
 RUN wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && chmod 700 epel-release-latest-7.noarch.rpm && rpm -i epel-release-latest-7.noarch.rpm
 RUN yum install python36 python36-setuptools -y && easy_install-3.6 pip && pip install --upgrade pip
